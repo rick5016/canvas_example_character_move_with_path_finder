@@ -140,6 +140,8 @@
         }
 
         var test = 1;
+        var test2 = 1;
+        var test3 = 1;
         var population = [];
         (function () {
             // Grille
@@ -160,14 +162,10 @@
 
             // Init personnages
             population.push(new perso(sprites, 650, 100, 5, sprites.bas));
-            //var perso2 = new perso(sprites, 20, 40, 5, sprites.droite);
-            //var perso3 = new perso(sprites, 20, 400, 4, sprites.haut_droite);
-            //var perso4 = new perso(sprites, 400, 400, 2, sprites.haut);
+            population.push(new perso(sprites, 100, 350, 5, sprites.bas));
+            population.push(new perso(sprites, 100, 470, 5, sprites.bas));
 
             window.requestAnimationFrame(live)
-
-            // test pathfinder
-            //document.getElementById("etape1").addEventListener("click", go);
         })();
 
         // Boucle de rafraichissement
@@ -181,14 +179,17 @@
             frameCount = 0;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             var perso1 = population[0];
+            var perso2 = population[1];
+            var perso3 = population[2];
             draw(perso1.img.img, perso1, sprites.largeur_perso, sprites.hauteur_perso);
-            //draw(perso1.img.img, perso2, sprites.largeur_perso, sprites.hauteur_perso);
-            //draw(perso1.img.img, perso3, sprites.largeur_perso, sprites.hauteur_perso);
+            draw(perso1.img.img, perso2, sprites.largeur_perso, sprites.hauteur_perso);
+            draw(perso1.img.img, perso3, sprites.largeur_perso, sprites.hauteur_perso);
             //draw(perso4.img.img, perso4, sprites.largeur_perso, sprites.hauteur_perso);
 
             // Tests déplacements
             move(perso1);
-            //move(perso2);
+            move2(perso2);
+            move3(perso3);
             //move2(perso3);
             //move3(perso4);
 

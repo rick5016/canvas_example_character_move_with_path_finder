@@ -15,6 +15,15 @@ class Node {
                 }
             }
         }
+        if (this.x == 690 && this.y == 400) {
+            var tt = 1;
+        }
+        for (var key in population) {
+            var perso = population[key];
+            if (this.y == perso.coords_y && this.x == (perso.coords_x)) {
+                return false
+            }
+        }
 
         return true
     }
